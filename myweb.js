@@ -1,22 +1,28 @@
-/*paper.install(window);
+paper.install(window);
 window.onload = function() {
 	// Setup directly from canvas id:
 	// Create a circle shaped path with its center at the center
 // of the view and a radius of 30:
+    console.log("Boom");
 	var canvas = document.getElementById('myCanvas');
 	paper.setup(canvas);
 	var path = new Path.Circle({
 	center: view.center,
-	radius: 100,
+	radius: 500,
 	strokeColor: 'black'
 	});
-	console.log(path);
-	for (var i = 0; i < path.length; i++) {
-	var point = path.getPointAt(i);
-	console.log(point)
- 	};
-}*/
-
+	console.log(path.length);
+	for (var i = 0; i < path.length / 20; i++) {
+        var point = path.getPointAt(i * 20);
+        console.log("Hmm")
+        var img = new Image();
+        img.src = "assets/textbox.png"
+        img.style="position:absolute;left: " + point.x + "px;top:" + point.y + "px;";
+        console.log(img.style);
+        document.body.appendChild(img);
+ 	}
+}
+/*
 
  var minim = null;
 var sou = null;
@@ -142,5 +148,5 @@ newBall=2;
     $p.fill(bottomColor);              $p.rect ($p.mouseX-rectSize/2, $p.height-30, rectSize, 10);
 }
 $p.draw = draw;
-function mousePressed() {
+function mousePressed() {*/
 
