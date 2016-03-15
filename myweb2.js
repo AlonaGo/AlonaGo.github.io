@@ -25,8 +25,9 @@ function initializePath() {
     path.add(view.bounds.bottomRight);
     //path.fullySelected = true;
 
+
     console.log(path.length);
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < path.length / 20; i++) {
         var point = path.getPointAt(i * 20);
         var img = new Image();
         img.src = "assets/textbox.png"
@@ -54,14 +55,12 @@ window.onload = function() {
                 path.smooth({ type: 'continuous' });
 
             //console.log(path.getPointAt(0));
-            imgIndex = 0;
-            for (var i = 0; i < 100; i++) {
+            for (var i = 0; i < images.length; i++) {
                 var point = path.getPointAt(i * 20);
                // console.log(point);
                 if (point) {
-                    images[imgIndex].style="position:absolute;left: " + point.x + "px;top:" + point.y + "px;";
+                    images[i].style="position:absolute;left: " + point.x + "px;top:" + point.y + "px;";
                 }
-                imgIndex++;
             }
 
         }
